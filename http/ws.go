@@ -147,6 +147,7 @@ func WSHandleConn[I any, S WSConn[I]](conn *websocket.Conn, ctx S, config *WSCon
 				// dont need to do anything as we are using these for outbound connections
 				// only to write to a listening agent FE so can just log and drop any
 				// thing sent by agent FE here - this can change later
+        log.Println("RECEIVED MESSAGE KHAI.  MESSAGE:", result.Value)
 				ctx.HandleMessage(result.Value)
 			}
 			break
